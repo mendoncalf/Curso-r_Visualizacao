@@ -1,0 +1,103 @@
+---
+title: "Exercicio Xaringan"
+subtitle: "Curso-R"
+author: "Leandro de Freitas Mendonça"
+institute: "GDM"
+date: "(updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    # chakra: libs/remark-latest.min.js
+    css: ["useR", "useR-fonts"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r include=FALSE}
+# xaringan::summon_remark()
+
+```
+
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo(
+  image_url = "https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/xaringan.png"
+)
+```
+
+
+
+#Meu Primeiro slide
+
+**Isso fica em negrito**
+
+*Isso fica em italico*
+
+[site GDM](http://gdmseeds.com/)
+
+`model = asreml()`
+
+---
+
+```{r pacotes, include=FALSE}
+
+library(dados)
+library(tidyverse)
+
+```
+
+#Meu segundo slide
+##Adicionando uma tabela
+
+```{r, echo=FALSE}
+
+tab = mtcarros%>%
+       count(cilindros)%>%
+       knitr::kable(align = 'c') # alinhamento dentro da tabela
+
+tab
+
+```
+
+---
+#Imagem da pasta img 
+
+```{r, echo = FALSE, fig.align='center'}
+
+knitr::include_graphics(path = 'img/gdm.png') # direrotirio dentro do .Rmd passa a ser o local onde fica o .Rmd (similar ao shiny)
+
+```
+
+
+---
+#Imagem da internet 
+
+```{r,echo=FALSE, out.width="50%", out.height="50%"}
+knitr::include_graphics(path = 'https://github.com/rladies/starter-kit/raw/master/logo/R-LadiesGlobal_RBG_online_LogoWithText_Horizontal.png')
+
+```
+---
+#Uma soma simples
+
+```{r}
+x = 4
+y = 6
+x+y
+
+```
+
+---
+#Aparecer aos poucos
+
+--
+1 2
+
+--
+3 4
+<br/> 
+--
+5 6
+
+
