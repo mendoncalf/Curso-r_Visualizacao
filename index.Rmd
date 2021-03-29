@@ -100,6 +100,19 @@ x+y
 <br/> 
 --
 5 6
+<br/> 
+--
+```{r, echo = FALSE, warning = FALSE, message = FALSE, fig.align='center', fig.width= 8, fig.height= 5}
+pinguins%>%
+  ggplot()+
+    aes(x = massa_corporal, y = comprimento_nadadeira, color = especies)+
+    geom_point()+
+    geom_smooth(se = F, color = 'black', method = 'lm')+
+    theme_minimal()
+
+```
+
+
 
 ---
 #Usando xaringanExtra
